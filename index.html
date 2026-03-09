@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Portal - HTML/CSS/JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>College Event Management Portal</h1>
+            <p>Manage and register for campus events seamlessly</p>
+            <div id="countdown" class="countdown"></div>
+        </header>
+
+        <nav>
+            <button onclick="showSection('events')" class="active">Events</button>
+            <button onclick="showSection('add')">Add Event (Admin)</button>
+            <button onclick="showSection('myRegs')">My Registrations</button>
+        </nav>
+
+        <div id="events-section">
+            <div class="search-filter">
+                <input type="text" id="searchInput" placeholder="Search events..." oninput="filterEvents()">
+                <select id="categoryFilter" onchange="filterEvents()">
+                    <option value="">All Categories</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Sports">Sports</option>
+                </select>
+            </div>
+            <div id="eventsGrid" class="events-grid"></div>
+        </div>
+
+        <div id="add-section" class="form-section" style="display: none;">
+            <h2>Add New Event</h2>
+            <input type="text" id="eventName" placeholder="Event Name">
+            <input type="date" id="eventDate">
+            <input type="text" id="eventDesc" placeholder="Description">
+            <select id="eventCategory">
+                <option value="Tech">Tech</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Sports">Sports</option>
+            </select>
+            <input type="number" id="eventSpots" placeholder="Total Spots" min="1">
+            <button onclick="addEvent()">Add Event</button>
+        </div>
+
+        <div id="myRegs-section" class="form-section" style="display: none;">
+            <h2>Your Registrations</h2>
+            <div id="regsList"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

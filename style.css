@@ -1,0 +1,24 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+header { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; margin-bottom: 30px; text-align: center; color: white; }
+nav { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+nav button { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s; }
+nav button:hover, nav button.active { background: #0056b3; transform: scale(1.05); }
+input[type="text"], input[type="date"], input[type="number"], select { padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin: 5px; width: 200px; }
+.events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.event-card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s; }
+.event-card:hover { transform: translateY(-10px); }
+.event-card h3 { color: #007bff; margin-bottom: 10px; }
+.event-card p { margin: 5px 0; }
+.event-card button { background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; margin: 5px; }
+.event-card button:hover { background: #218838; }
+.event-card button:disabled { background: #6c757d; cursor: not-allowed; }
+.form-section { background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.countdown { text-align: center; font-size: 1.2em; color: #ff6b6b; margin: 20px 0; }
+.search-filter { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+@media (max-width: 768px) { 
+    .events-grid { grid-template-columns: 1fr; } 
+    nav { flex-direction: column; } 
+    input[type="text"], input[type="date"], input[type="number"], select { width: 100%; }
+}
